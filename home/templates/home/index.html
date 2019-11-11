@@ -3,16 +3,18 @@
 {% block content %}
 <div id="slides" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
+
+        {% for slider_photo in slider_photos %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
             {% load static %}
-            <img src="{% static 'home/images/p20.jpg'%}" class="d-block w-100">
+            <img src="{% static slider_photo.path %}" class="d-block w-100 h-100">
             <div class="carousel-caption">
-                <h1 >Mornin'</h1>
-                <p class="lead text-light">
-                    A sunrise scenario on the Ljuboten peak (2500 meters above sea level).</p>
-                <button type="button" class="btn btn-outline-light btn-lg">Buy a print</button>
+            <h1 class="text-uppercase">{{ slider_photo.title }}</h1>
+            <p class="lead text-light">{{ slider_photo.description }}</p>
+            <button type="button" class="btn btn-outline-light btn-lg">Buy a print</button>
             </div>
         </div>
+        {% endfor %}
 
         <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
