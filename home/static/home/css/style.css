@@ -38,7 +38,7 @@ html, body {
 
 .carousel-caption {
     position: absolute;
-    top: 50%;
+    top: 60%;
 }
 
 .carousel-caption h1 {
@@ -88,6 +88,10 @@ html, body {
 
 .gallery {
     padding: 40px;
+    margin: 20px;
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
 }
 
 .gallery .tab-pane a img {
@@ -140,7 +144,7 @@ html, body {
 
     .carousel-caption {
         position: absolute;
-        top: 40%;
+        top: 50%;
     }
 
     .carousel-caption .display-2 {

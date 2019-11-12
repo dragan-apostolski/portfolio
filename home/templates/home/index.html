@@ -38,4 +38,39 @@
 </div>
 </div>
 
+<div class="container-fluid showcase">
+
+<div class="tabs pt-4">
+    <ul class="nav nav-tabs nav-justified" id="categoryTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="landscapes-tab" data-toggle="tab" href="#landscapes"
+                role="tab" aria-controls="landscapes" aria-selected="true">Landscapes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cityscapes-tab" data-toggle="tab" href="#cityscapes"
+            role="tab" aria-controls="cityscapes" aria-selected="false">Cityscapes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="moments-tab" data-toggle="tab" href="#moments"
+            role="tab" aria-controls="moments" aria-selected="false">Life moments</a>
+        </li>
+    </ul>
+</div>
+
+<div id="gallery" class="tab-content gallery">
+    <div class="tab-pane fade show active" id="landscapes" role="tabpanel" aria-labelledby="landscapes-tab">
+        {% for gallery_photo in gallery_landscapes %}
+        <div class="container">
+            {% load static %}
+            <a href="{% static gallery_photo.path_original %}"><img src="{% static gallery_photo.path %}"></a>
+            <div class="hover-info">
+                <h1 class="text-light display-4"> {{ gallery_photo.title }} </h1>
+                <button type="button" class="btn btn-outline-light btn-lg btn-lg">Buy print</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
 {% endblock content %}
