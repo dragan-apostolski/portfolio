@@ -1,7 +1,20 @@
+let scrollPosition = 0;
+
 $('.gallery a').simpleLightbox();
 
-$(window).scroll(function(e){
-    var scrollPos = $(document).scrollTop();
+$('#navbarResponsive').on('shown.bs.collapse', function() {
+    $('.navbar').addClass('non-transparent');
+});
+
+$('#navbarResponsive').on('hidden.bs.collapse', function () {
+    if (scrollPosition == 0) {
+        $('.navbar').removeClass('non-transparent');
+    }
+});
+
+$(window).scroll(function(){
+    let scrollPos = $(document).scrollTop();
+    scrollPosition = scrollPos;
     if (scrollPos > 10){
         $(".navbar").addClass("non-transparent");
     }
@@ -9,7 +22,7 @@ $(window).scroll(function(e){
         $(".navbar").removeClass("non-transparent");
     }
 
-    tabs = document.querySelector(".tabs");
+    let tabs = document.querySelector(".tabs");
     if(tabs.getBoundingClientRect().top >= 0){
         $(".tabs").removeClass("tabs-fixed");
     }

@@ -11,55 +11,61 @@ html, body {
     z-index: 0;
 }
 
-.navbar, .navbar-expand-md {
+.navbar, navbar-expand-md {
     z-index: 10;
     background-color: transparent !important;
-    transition: .8s ease;
+    transition: .3s ease;
     padding: 1rem 1.5rem;
 }
 
 .nav-item a, .navbar-brand {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .non-transparent {
     background-color: #434343 !important;
-    transition: .8s ease;   
+    transition: .3s ease;
 }
 
 .nav-link, .navbar-brand {
-    font-size: large;
+    /*font-size: large;*/
 }
 
 .nav-tabs .nav-link {
-    font-size: x-large;
+    /*font-size: x-large;*/
     color: white;
 }
 
 .carousel-caption {
     position: absolute;
-    top: 60%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-caption h1 {
-    text-align: center;
-    font-size: 500%;
-    text-transform: uppercase;
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 0.9;
 }
 
-.carousel-caption p {
-    font-size: xx-small;
+.carousel-caption p, .carousel-caption button {
+    font-size: 0.8rem;
 }
 
 .jumbotron {
     margin-bottom: 0 !important;
     border-radius: 0 !important;
-}/* 
-    background: -moz-linear-gradient(top,  #e9ecef 0%, #888888 100%);
-    background: -webkit-linear-gradient(top,  #e9ecef 0%,#888888 100%); 
-    background: linear-gradient(to bottom,  #e9ecef 0%,#888888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9ecef', endColorstr='#888888',GradientType=0 ); 
-} */
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem;
+}
+.jumbotron p {
+    font-size: 1rem;
+}
 
 .showcase {
         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#888888+0,e9ecef+100 */
@@ -88,10 +94,9 @@ html, body {
 
 .gallery {
     padding: 40px;
-    margin: 20px;
-    column-count: 3;
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
 }
 
 .gallery .tab-pane a img {
@@ -120,6 +125,15 @@ html, body {
     opacity: 0.5;
 }
 
+.hover-info h1 {
+    font-weight: 500;
+    line-height: 0.9;
+}
+
+.hover-info button {
+    font-size: 1rem;
+}
+
 .tab-pane .container:hover .hover-info {
     opacity: 1;
     transition: 1s ease;
@@ -129,35 +143,18 @@ html, body {
     opacity: 0.9;
 }
 
-@media (min-width: 1200px) {
-    .carousel-caption {
-        position: absolute;
-        top: 45%;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .navbar-brand, .nav-item a {
-        font-size: 1.2rem;
-    }
-
-    .carousel-caption {
-        position: absolute;
-        top: 50%;
-    }
-
-    .carousel-caption .display-2 {
-        font-size: 4.5rem;
-    }
-
-    .carousel-caption .lead {
-        font-size: 1.2rem;
-    }
-}
-@media (min-width: 768px) {
+@media (min-width: 576px){
 
 }
-@media (min-width: 576px) {
+
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 992px){
+
+}
+
+@media (min-width: 1200px){
 
 }

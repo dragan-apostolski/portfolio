@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
+{#Photo slider#}
 <div id="slides" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
@@ -9,9 +10,9 @@
             {% load static %}
             <img src="{% static slider_photo.path %}" class="d-block w-100 h-100">
             <div class="carousel-caption">
-            <h1 class="text-uppercase">{{ slider_photo.title }}</h1>
-            <p class="lead text-light">{{ slider_photo.description }}</p>
-            <button type="button" class="btn btn-outline-light btn-lg">Buy a print</button>
+                <h1 class="text-uppercase display-4">{{ slider_photo.title }}</h1>
+                <p class="text-light d-none d-sm-block">{{ slider_photo.description }}</p>
+                <button type="button" class="btn btn-outline-light btn-lg">Buy a print</button>
             </div>
         </div>
         {% endfor %}
@@ -27,17 +28,19 @@
     </div>
 </div>
 
+{#Jumbotron welcome message#}
 <div class="container-fluid">
 <div class="row jumbotron">
     <div class="col-12">
         <h1>Welcome to my portfolio!</h1>
-        <p class="lead text-align-center">I am a self-educated photographer. On my portfolio you can find images of nature, architecture,
-            here and there some portraits.
+        <p class="text-align-center">I am a self-educated photographer. On my portfolio you can find photographs of
+            nature, architecture, and here and there some portraits.
         </p>
     </div>
 </div>
 </div>
 
+{#Gallery showcase#}
 <div class="container-fluid showcase">
 
 <div class="tabs pt-4">
@@ -57,6 +60,7 @@
     </ul>
 </div>
 
+
 <div id="gallery" class="tab-content gallery">
     <div class="tab-pane fade show active" id="landscapes" role="tabpanel" aria-labelledby="landscapes-tab">
         {% for gallery_photo in gallery_landscapes %}
@@ -64,13 +68,25 @@
             {% load static %}
             <a href="{% static gallery_photo.path_original %}"><img src="{% static gallery_photo.path %}"></a>
             <div class="hover-info">
-                <h1 class="text-light display-4"> {{ gallery_photo.title }} </h1>
+                <h1 class="text-light photo-title"> {{ gallery_photo.title }} </h1>
                 <button type="button" class="btn btn-outline-light btn-lg btn-lg">Buy print</button>
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
 
+    <div class="tab-pane fade" id="cityscapes" role="tabpanel" aria-labelledby="cityscapes-tab">
+    {% for gallery_photo in gallery_cityscapes %}
+    <div class="container">
+        {% load static %}
+        <a href="{% static gallery_photo.path_original %}"><img src="{% static gallery_photo.path %}"></a>
+        <div class="hover-info">
+            <h1 class="text-light display-4"> {{ gallery_photo.title }} </h1>
+            <button type="button" class="btn btn-outline-light btn-lg btn-lg">Buy print</button>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
 
 {% endblock content %}
