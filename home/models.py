@@ -16,6 +16,8 @@ class GalleryPhoto(models.Model):
     path = models.CharField(max_length=50, help_text='Path to the resized image source (in for static)')
     path_original = models.CharField(max_length=50, help_text='Path to the original image source (in static dir)')
     genre = models.CharField(max_length=15, help_text='Image genre (landscape, cityscape, ...)')
+    date = models.DateTimeField(null=True)
+    location = models.CharField(max_length=80, help_text='Location (coordinates or location name)', null=True)
 
     def __str__(self):
         return self.title

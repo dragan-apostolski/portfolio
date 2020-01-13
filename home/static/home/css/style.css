@@ -18,6 +18,11 @@ html, body {
     padding: 1rem 1.5rem;
 }
 
+.navbar:hover {
+    background-color: #434343 !important;
+    transition: .3s ease;
+}
+
 .nav-item a, .navbar-brand {
     font-size: 1rem;
 }
@@ -27,11 +32,7 @@ html, body {
     transition: .3s ease;
 }
 
-.nav-link, .navbar-brand {
-    /*font-size: large;*/
-}
-
-.nav-tabs .nav-link {
+.nav-tabs .nav-link, .navbar-brand {
     /*font-size: x-large;*/
     color: white;
 }
@@ -46,13 +47,13 @@ html, body {
 }
 
 .carousel-caption h1 {
-    font-size: 2.8rem;
+    font-size: 2.3rem;
     font-weight: 500;
     line-height: 0.9;
 }
 
 .carousel-caption p, .carousel-caption button {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .jumbotron {
@@ -61,10 +62,10 @@ html, body {
 }
 
 .jumbotron h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 .jumbotron p {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .showcase {
@@ -144,11 +145,19 @@ html, body {
 }
 
 @media (min-width: 576px){
-
+    .gallery {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+    }
 }
 
 @media (min-width: 768px){
-
+    .gallery {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+    }
 }
 
 @media (min-width: 992px){
@@ -156,5 +165,9 @@ html, body {
 }
 
 @media (min-width: 1200px){
-
+    .gallery {
+        column-count: 4;
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+    }
 }

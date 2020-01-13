@@ -68,7 +68,7 @@
             {% load static %}
             <a href="{% static gallery_photo.path_original %}"><img src="{% static gallery_photo.path %}"></a>
             <div class="hover-info">
-                <h1 class="text-light photo-title"> {{ gallery_photo.title }} </h1>
+                <h1 class="text-light photo-title">{{ gallery_photo.title }}</h1>
                 <button type="button" class="btn btn-outline-light btn-lg btn-lg">Buy print</button>
             </div>
         </div>
@@ -87,6 +87,25 @@
     </div>
     {% endfor %}
     </div>
+
+    <div class="tab-pane fade" id="moments" role="tabpanel" aria-labelledby="moments-tab">
+    {% for gallery_photo in gallery_moments %}
+    <div class="container">
+        {% load static %}
+        <a href="{% static gallery_photo.path_original %}"><img src="{% static gallery_photo.path %}"></a>
+        <div class="hover-info">
+            <h1 class="text-light display-4"> {{ gallery_photo.title }} </h1>
+            <button type="button" class="btn btn-outline-light btn-lg btn-lg">Buy print</button>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
 </div>
 
+{# Photo stories section #}
+<div id="photo-stories">
+    <div class="container-fluid">
+
+    </div>
+</div>
 {% endblock content %}

@@ -10,7 +10,7 @@ class SliderPhotoAdmin(admin.ModelAdmin):
 
 
 class GalleryPhotoAdmin(admin.ModelAdmin):
-    list_display = ['title', 'description', 'path', 'path_original', 'genre']
+    list_display = ['title', 'description', 'date', 'location', 'path', 'path_original', 'genre']
 
 
 admin.site.register(SliderPhoto, SliderPhotoAdmin)
